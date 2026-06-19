@@ -31,4 +31,4 @@ The Apps Script will create/use a `Subscribers` tab with these columns:
 
 Publish this folder as a static site. If it becomes its own repository, set GitHub Pages to deploy from the repository root and use `index.html` as the entry page.
 
-Before final launch, update `og:image` in `index.html` to the absolute GitHub Pages or custom-domain URL so social previews can read it reliably.
+GitHub Pages URL: `https://ajratoni.github.io/skin-by-karla/`.
