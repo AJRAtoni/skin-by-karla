@@ -1,4 +1,6 @@
 const header = document.querySelector("[data-header]");
+const menuToggle = document.querySelector("[data-menu-toggle]");
+const siteNav = document.querySelector("[data-site-nav]");
 const newsletterForm = document.querySelector("[data-newsletter-form]");
 const newsletterSuccess = document.querySelector("[data-newsletter-success]");
 const newsletterError = document.querySelector("[data-newsletter-error]");
@@ -10,6 +12,42 @@ function updateHeaderShadow() {
 
 updateHeaderShadow();
 window.addEventListener("scroll", updateHeaderShadow, { passive: true });
+
+function closeMenu() {
+  if (!header || !menuToggle) return;
+  header.classList.remove("is-menu-open");
+  menuToggle.setAttribute("aria-expanded", "false");
+  menuToggle.setAttribute("aria-label", "Open navigation menu");
+}
+
+if (header && menuToggle && siteNav) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = header.classList.toggle("is-menu-open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute(
+      "aria-label",
+      isOpen ? "Close navigation menu" : "Open navigation menu",
+    );
+  });
+
+  siteNav.addEventListener("click", (event) => {
+    if (event.target instanceof HTMLAnchorElement) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 760) {
+      closeMenu();
+    }
+  });
+}
 
 if (newsletterForm && newsletterSuccess && newsletterError) {
   newsletterForm.addEventListener("submit", async (event) => {
