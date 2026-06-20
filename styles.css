@@ -102,10 +102,10 @@ a {
   width: 44px;
   height: 44px;
   padding: 0;
-  border: 1px solid var(--line);
+  border: 0;
   border-radius: 4px;
   color: var(--ink);
-  background: rgba(255, 255, 255, 0.72);
+  background: transparent;
   cursor: pointer;
 }
 
@@ -740,15 +740,15 @@ h3 {
   .site-nav {
     position: absolute;
     top: 100%;
-    right: 16px;
-    left: 16px;
+    right: 0;
+    left: 0;
     display: none;
     grid-template-columns: 1fr;
     gap: 0;
     max-width: none;
     overflow: hidden;
-    border: 1px solid var(--line);
-    border-radius: 6px;
+    border: 0;
+    border-radius: 0;
     background: rgba(255, 255, 255, 0.98);
     box-shadow: 0 22px 60px rgba(35, 31, 28, 0.12);
   }
@@ -759,13 +759,8 @@ h3 {
 
   .site-nav a {
     padding: 16px 18px;
-    border-bottom: 1px solid var(--line);
     font-size: 0.76rem;
     text-align: center;
-  }
-
-  .site-nav a:last-child {
-    border-bottom: 0;
   }
 
   .site-nav a::after {
