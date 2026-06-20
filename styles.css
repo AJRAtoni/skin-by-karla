@@ -687,6 +687,10 @@ h3 {
     min-height: clamp(500px, 72svh, 680px);
   }
 
+  .hero-image {
+    object-position: 72% center;
+  }
+
   .hero-content {
     width: min(720px, calc(100% - 40px));
     margin: 0 auto;
@@ -696,11 +700,11 @@ h3 {
     background:
       linear-gradient(
         90deg,
-        rgba(26, 26, 26, 0.48),
-        rgba(26, 26, 26, 0.18) 58%,
-        rgba(26, 26, 26, 0.02)
+        rgba(26, 26, 26, 0.3),
+        rgba(26, 26, 26, 0.1) 58%,
+        rgba(26, 26, 26, 0)
       ),
-      linear-gradient(0deg, rgba(26, 26, 26, 0.16), rgba(26, 26, 26, 0.02));
+      linear-gradient(0deg, rgba(26, 26, 26, 0.1), rgba(26, 26, 26, 0) 48%);
   }
 
   .about-grid,
@@ -783,7 +787,7 @@ h3 {
   }
 
   .hero-image {
-    object-position: 64% center;
+    object-position: 84% center;
   }
 
   .hero-content {
