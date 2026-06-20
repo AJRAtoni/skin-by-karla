@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Propuesta de Blog | Skin by Karla</title>
+    <style>
+      :root {
+        --ink: #1f1d1b;
+        --text: #514b45;
+        --muted: #7d746b;
+        --paper: #ffffff;
+        --soft: #f7f3ee;
+        --line: #ded6cc;
+        --sage: #667468;
+        --rose: #c7aaa0;
+        --clay: #a6674e;
+        --blue: #5f7380;
+        --gold: #b79a64;
+        --shadow: 0 22px 70px rgba(31, 29, 27, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--text);
+        background: var(--soft);
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        font-size: 16px;
+        line-height: 1.65;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+
+      .page {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 36px 0 56px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 28px;
+      }
+
+      .brand {
+        width: 150px;
+      }
+
+      .tag {
+        padding: 8px 12px;
+        border: 1px solid var(--line);
+        color: var(--muted);
+        background: rgba(255, 255, 255, 0.62);
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+        gap: 34px;
+        align-items: stretch;
+        margin-bottom: 24px;
+      }
+
+      .hero-main,
+      .hero-note,
+      .option-card,
+      .table-wrap,
+      .recommendation,
+      .process {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--paper);
+        box-shadow: var(--shadow);
+      }
+
+      .hero-main {
+        padding: clamp(28px, 5vw, 56px);
+      }
+
+      .eyebrow,
+      .section-label {
+        margin: 0 0 14px;
+        color: var(--sage);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        color: var(--ink);
+        line-height: 1.08;
+      }
+
+      h1 {
+        max-width: 760px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2.8rem, 6vw, 5.4rem);
+        letter-spacing: 0;
+      }
+
+      h2 {
+        font-size: clamp(1.7rem, 3vw, 2.4rem);
+      }
+
+      h3 {
+        font-size: 1.35rem;
+      }
+
+      .lead {
+        max-width: 760px;
+        margin: 24px 0 0;
+        color: var(--text);
+        font-size: clamp(1.05rem, 2vw, 1.28rem);
+      }
+
+      .hero-note {
+        display: grid;
+        align-content: center;
+        gap: 18px;
+        padding: 30px;
+        background:
+          linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)),
+          url("assets/images/skincare-detail.jpg") center / cover;
+      }
+
+      .hero-note strong {
+        color: var(--ink);
+        font-size: 1.45rem;
+        line-height: 1.2;
+      }
+
+      .hero-note p {
+        margin: 0;
+      }
+
+      .quick-summary {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        margin-bottom: 34px;
+      }
+
+      .summary-item {
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.72);
+      }
+
+      .summary-item span {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--ink);
+        font-weight: 800;
+      }
+
+      .summary-item p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .options {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin: 18px 0 36px;
+      }
+
+      .option-card {
+        display: grid;
+        gap: 20px;
+        padding: 26px;
+      }
+
+      .option-head {
+        display: grid;
+        gap: 12px;
+      }
+
+      .option-number {
+        display: inline-grid;
+        place-items: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        color: var(--paper);
+        background: var(--sage);
+        font-weight: 800;
+      }
+
+      .option-card:nth-child(2) .option-number {
+        background: var(--clay);
+      }
+
+      .option-card:nth-child(3) .option-number {
+        background: var(--blue);
+      }
+
+      .best-for {
+        padding: 12px 14px;
+        border-left: 4px solid var(--sage);
+        color: var(--ink);
+        background: #f3f6f1;
+        font-weight: 700;
+      }
+
+      .option-card:nth-child(2) .best-for {
+        border-left-color: var(--clay);
+        background: #faf0ec;
+      }
+
+      .option-card:nth-child(3) .best-for {
+        border-left-color: var(--blue);
+        background: #eef4f6;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 1.1rem;
+      }
+
+      li + li {
+        margin-top: 8px;
+      }
+
+      .metrics {
+        display: grid;
+        gap: 10px;
+      }
+
+      .metric {
+        display: grid;
+        grid-template-columns: 92px 1fr;
+        gap: 12px;
+        align-items: center;
+        color: var(--muted);
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+
+      .bar {
+        height: 8px;
+        overflow: hidden;
+        border-radius: 99px;
+        background: #e9e2da;
+      }
+
+      .bar span {
+        display: block;
+        height: 100%;
+        border-radius: inherit;
+        background: var(--gold);
+      }
+
+      .fill-25 {
+        width: 25%;
+      }
+
+      .fill-45 {
+        width: 45%;
+      }
+
+      .fill-58 {
+        width: 58%;
+      }
+
+      .fill-70 {
+        width: 70%;
+      }
+
+      .fill-78 {
+        width: 78%;
+      }
+
+      .fill-82 {
+        width: 82%;
+      }
+
+      .fill-92 {
+        width: 92%;
+      }
+
+      .fill-95 {
+        width: 95%;
+      }
+
+      .fill-98 {
+        width: 98%;
+      }
+
+      .table-wrap {
+        margin-bottom: 30px;
+        overflow: hidden;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: var(--paper);
+      }
+
+      caption {
+        padding: 24px 26px 10px;
+        color: var(--ink);
+        font-size: 1.4rem;
+        font-weight: 800;
+        text-align: left;
+      }
+
+      th,
+      td {
+        padding: 18px 20px;
+        border-top: 1px solid var(--line);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        color: var(--ink);
+        background: #f4eee8;
+        font-size: 0.78rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      td:first-child {
+        color: var(--ink);
+        font-weight: 800;
+      }
+
+      .score {
+        display: inline-flex;
+        min-width: 82px;
+        justify-content: center;
+        padding: 4px 9px;
+        border-radius: 99px;
+        background: #f0e7dc;
+        color: var(--ink);
+        font-size: 0.84rem;
+        font-weight: 800;
+      }
+
+      .recommendation {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(260px, 0.65fr);
+        gap: 26px;
+        padding: 28px;
+        margin-bottom: 30px;
+        background:
+          linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.96),
+            rgba(255, 255, 255, 0.86)
+          ),
+          url("assets/images/karla-portrait.jpg") right center / cover;
+      }
+
+      .recommendation p {
+        margin: 16px 0 0;
+      }
+
+      .decision-box {
+        align-self: start;
+        padding: 20px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.9);
+      }
+
+      .decision-box strong {
+        display: block;
+        margin-bottom: 10px;
+        color: var(--ink);
+      }
+
+      .process {
+        padding: 26px;
+      }
+
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 18px;
+      }
+
+      .step {
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fbfaf8;
+      }
+
+      .step span {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--sage);
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .step p {
+        margin: 0;
+      }
+
+      .footer-note {
+        margin: 24px 0 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      @media (max-width: 900px) {
+        .hero,
+        .recommendation {
+          grid-template-columns: 1fr;
+        }
+
+        .quick-summary,
+        .options,
+        .steps {
+          grid-template-columns: 1fr;
+        }
+
+        .table-wrap {
+          overflow-x: auto;
+        }
+
+        table {
+          min-width: 820px;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .page {
+          width: min(100% - 24px, 1180px);
+          padding-top: 20px;
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .brand {
+          width: 128px;
+        }
+
+        .hero-main,
+        .hero-note,
+        .option-card,
+        .recommendation,
+        .process {
+          padding: 22px;
+        }
+      }
+
+      @media print {
+        body {
+          background: var(--paper);
+        }
+
+        .page {
+          width: 100%;
+          padding: 0;
+        }
+
+        .hero-main,
+        .hero-note,
+        .option-card,
+        .table-wrap,
+        .recommendation,
+        .process {
+          box-shadow: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header class="topbar">
+        <img
+          class="brand"
+          src="assets/images/logo-skin-by-karla.png"
+          alt="Skin by Karla"
+          width="2400"
+          height="1414">
+        <div class="tag">Propuesta comercial de blog</div>
+      </header>
+
+      <section class="hero" aria-labelledby="proposal-title">
+        <div class="hero-main">
+          <p class="eyebrow">Objetivo</p>
+          <h1 id="proposal-title">Tres formas de añadir un blog a Skin by Karla</h1>
+          <p class="lead">
+            La prioridad es que Karla pueda publicar contenido sin tocar código:
+            título, texto e imagen destacada. Estas son las tres vías posibles,
+            ordenadas por facilidad, control y esfuerzo técnico.
+          </p>
+        </div>
+
+        <div class="hero-note">
+          <strong>Decisión clave</strong>
+          <p>
+            Elegir si el blog debe vivir fuera de la web para empezar rápido, o
+            dentro de la web para ganar control y posicionamiento a largo plazo.
+          </p>
+        </div>
+      </section>
+
+      <section class="quick-summary" aria-label="Resumen rápido">
+        <div class="summary-item">
+          <span>Más rápido</span>
+          <p>Substack: blog y newsletter en una sola herramienta.</p>
+        </div>
+        <div class="summary-item">
+          <span>Más completo</span>
+          <p>WordPress: control total, pero con más coste y mantenimiento.</p>
+        </div>
+        <div class="summary-item">
+          <span>Mejor equilibrio</span>
+          <p>GitHub Pages + CMS: blog integrado sin migrar toda la web.</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="options-title">
+        <p class="section-label">Opciones</p>
+        <h2 id="options-title">Qué puede elegir Karla</h2>
+
+        <div class="options">
+          <article class="option-card">
+            <div class="option-head">
+              <span class="option-number">1</span>
+              <h3>Web actual + Substack</h3>
+            </div>
+            <p>
+              Mantenemos la web actual en GitHub Pages y añadimos un enlace a
+              Substack. Cada publicación funciona como artículo y también como
+              newsletter enviada por email.
+            </p>
+            <div class="best-for">
+              Ideal para empezar rápido y validar el contenido.
+            </div>
+            <ul>
+              <li>Muy fácil para Karla.</li>
+              <li>Resuelve blog y newsletter a la vez.</li>
+              <li>Menor coste inicial.</li>
+              <li>
+                Menos control visual y SEO repartido entre web y Substack.
+              </li>
+            </ul>
+            <div
+              class="metrics"
+              role="group"
+              aria-label="Puntuaciones Substack"
+            >
+              <div class="metric">
+                Facilidad
+                <div class="bar"><span class="fill-95"></span></div>
+              </div>
+              <div class="metric">
+                Control
+                <div class="bar"><span class="fill-45"></span></div>
+              </div>
+              <div class="metric">
+                Esfuerzo
+                <div class="bar"><span class="fill-25"></span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="option-card">
+            <div class="option-head">
+              <span class="option-number">2</span>
+              <h3>Migrar todo a WordPress</h3>
+            </div>
+            <p>
+              Portamos la web completa a WordPress para que Karla tenga un panel
+              tradicional donde crear posts, subir imágenes, editar páginas y
+              controlar categorías.
+            </p>
+            <div class="best-for">
+              Ideal si el blog será una pieza central del negocio.
+            </div>
+            <ul>
+              <li>Control total del blog y del contenido.</li>
+              <li>Panel conocido y muy completo.</li>
+              <li>Permite crecer hacia más funcionalidades.</li>
+              <li>Requiere hosting, mantenimiento, seguridad y más horas.</li>
+            </ul>
+            <div
+              class="metrics"
+              role="group"
+              aria-label="Puntuaciones WordPress"
+            >
+              <div class="metric">
+                Facilidad
+                <div class="bar"><span class="fill-78"></span></div>
+              </div>
+              <div class="metric">
+                Control
+                <div class="bar"><span class="fill-98"></span></div>
+              </div>
+              <div class="metric">
+                Esfuerzo
+                <div class="bar"><span class="fill-92"></span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="option-card">
+            <div class="option-head">
+              <span class="option-number">3</span>
+              <h3>GitHub Pages + CMS</h3>
+            </div>
+            <p>
+              Mantenemos la web actual y añadimos un blog estático con Jekyll.
+              Karla podría publicar desde Decap CMS o desde un flujo asistido
+              con ChatGPT/Codex.
+            </p>
+            <div class="best-for">
+              Ideal para integrar el blog sin pagar hosting extra.
+            </div>
+            <ul>
+              <li>El blog vive dentro de la web principal.</li>
+              <li>Buen equilibrio entre coste, SEO y control.</li>
+              <li>No requiere migrar toda la web.</li>
+              <li>
+                Necesita configuración técnica inicial y buen flujo de
+                publicación.
+              </li>
+            </ul>
+            <div
+              class="metrics"
+              role="group"
+              aria-label="Puntuaciones GitHub Pages y CMS"
+            >
+              <div class="metric">
+                Facilidad
+                <div class="bar"><span class="fill-70"></span></div>
+              </div>
+              <div class="metric">
+                Control
+                <div class="bar"><span class="fill-82"></span></div>
+              </div>
+              <div class="metric">
+                Esfuerzo
+                <div class="bar"><span class="fill-58"></span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="table-wrap" aria-labelledby="comparison-title">
+        <table>
+          <caption id="comparison-title">
+            Comparativa para decidir
+          </caption>
+          <thead>
+            <tr>
+              <th>Criterio</th>
+              <th>Substack</th>
+              <th>WordPress</th>
+              <th>GitHub + CMS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Facilidad para Karla</td>
+              <td><span class="score">Muy alta</span></td>
+              <td><span class="score">Alta</span></td>
+              <td><span class="score">Media-alta</span></td>
+            </tr>
+            <tr>
+              <td>Coste inicial</td>
+              <td>Bajo</td>
+              <td>Alto</td>
+              <td>Medio</td>
+            </tr>
+            <tr>
+              <td>Coste mensual</td>
+              <td>Bajo o cero, según uso</td>
+              <td>Hosting o VPS mensual</td>
+              <td>Bajo, sin hosting adicional si seguimos en GitHub Pages</td>
+            </tr>
+            <tr>
+              <td>Control visual</td>
+              <td>Limitado por Substack</td>
+              <td>Muy alto</td>
+              <td>Alto, manteniendo la identidad de la web actual</td>
+            </tr>
+            <tr>
+              <td>SEO</td>
+              <td>Parte del valor vive en Substack</td>
+              <td>Muy bueno si se configura bien</td>
+              <td>Bueno porque los artículos viven en la web principal</td>
+            </tr>
+            <tr>
+              <td>Mantenimiento</td>
+              <td>Muy bajo</td>
+              <td>Medio-alto: actualizaciones, backups y seguridad</td>
+              <td>Bajo-medio: repositorio, CMS y estructura del blog</td>
+            </tr>
+            <tr>
+              <td>Mejor uso</td>
+              <td>Empezar rápido con newsletter y comunidad</td>
+              <td>Construir una plataforma completa a largo plazo</td>
+              <td>Tener blog integrado sin rehacer toda la web</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="recommendation" aria-labelledby="recommendation-title">
+        <div>
+          <p class="section-label">Recomendación</p>
+          <h2 id="recommendation-title">
+            Empezar simple y escalar si el contenido funciona
+          </h2>
+          <p>
+            La vía más prudente es empezar con Substack si Karla quiere validar
+            la constancia del blog y construir una lista de emails sin fricción.
+            Si el contenido empieza a ser importante para su marca, el siguiente
+            paso natural sería integrar el blog en la web con GitHub Pages,
+            Jekyll y un CMS.
+          </p>
+          <p>
+            WordPress tiene sentido si desde el primer momento el blog va a ser
+            una parte central del negocio y se acepta una inversión mayor en
+            configuración, hosting y mantenimiento.
+          </p>
+        </div>
+
+        <div class="decision-box">
+          <strong>Mensaje comercial sugerido</strong>
+          <p>
+            Podemos empezar con una solución rápida y sencilla, y si el blog
+            crece, lo integramos dentro de la web principal sin perder el
+            trabajo realizado.
+          </p>
+        </div>
+      </section>
+
+      <section class="process" aria-labelledby="process-title">
+        <p class="section-label">Flujo ideal para Karla</p>
+        <h2 id="process-title">La experiencia debería ser siempre sencilla</h2>
+        <div class="steps">
+          <div class="step">
+            <span>Paso 1</span>
+            <p>Escribe el título del artículo.</p>
+          </div>
+          <div class="step">
+            <span>Paso 2</span>
+            <p>Sube una imagen destacada.</p>
+          </div>
+          <div class="step">
+            <span>Paso 3</span>
+            <p>Redacta o pega el contenido.</p>
+          </div>
+          <div class="step">
+            <span>Paso 4</span>
+            <p>Publica sin tocar código.</p>
+          </div>
+        </div>
+        <p class="footer-note">
+          Documento preparado para explicar las opciones de blog y newsletter de
+          Skin by Karla de forma clara durante la conversación comercial.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
