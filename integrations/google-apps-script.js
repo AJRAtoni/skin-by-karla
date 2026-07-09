@@ -1,6 +1,6 @@
-const SPREADSHEET_ID = "";
+const SPREADSHEET_ID = "10SmnN7GsK7GlG8e_h4krw8YC9QhSKb_quQIQRwLyhTg";
 const SHEET_NAME = "Subscribers";
-const HEADERS = ["Submitted At", "Email", "Source", "User Agent"];
+const HEADERS = ["Submitted At", "Email"];
 
 function doGet() {
   return jsonResponse_({ ok: true, message: "Skin by Karla signup endpoint" });
@@ -31,8 +31,6 @@ function doPost(event) {
     sheet.appendRow([
       data.submittedAt ? new Date(data.submittedAt) : new Date(),
       email,
-      data.source || "",
-      data.userAgent || "",
     ]);
   } finally {
     lock.releaseLock();

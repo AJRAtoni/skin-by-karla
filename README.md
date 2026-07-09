@@ -25,7 +25,7 @@ Static website for Skin by Karla, rebuilt from the Canva reference as a GitHub P
    `data-endpoint="YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL"`.
 
 The Apps Script will create/use a `Subscribers` tab with these columns:
-`Submitted At`, `Email`, `Source`, and `User Agent`.
+`Submitted At` and `Email`.
 
 ## GitHub Pages
 

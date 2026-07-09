@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Skin by Karla | Work Status</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet">
+    <style>
+      :root {
+        --black: #000;
+        --white: #fff;
+        --accent: linear-gradient(180deg, #9146ff 0%, #6209e5 100%);
+        --serif: "Playfair Display", Georgia, serif;
+        --sans: "Libre Franklin", Arial, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        background: var(--white);
+        color: var(--black);
+        font-family: var(--sans);
+      }
+
+      body {
+        margin: 0;
+        background: var(--white);
+        color: var(--black);
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: var(--black);
+        text-decoration-color: #6209e5;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 3px;
+      }
+
+      a:hover,
+      a:focus-visible {
+        color: #6209e5;
+      }
+
+      .page {
+        width: min(100% - 40px, 1040px);
+        margin: 0 auto;
+        padding: 28px 0 56px;
+      }
+
+      .header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 24px;
+        padding-bottom: 26px;
+        border-bottom: 2px solid var(--black);
+      }
+
+      .brand {
+        margin: 0;
+        font-family: var(--serif);
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 600;
+        letter-spacing: -0.05em;
+        line-height: 0.95;
+      }
+
+      .meta {
+        margin: 0;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.13em;
+        line-height: 1.55;
+        text-align: right;
+        text-transform: uppercase;
+      }
+
+      main {
+        padding-top: clamp(36px, 7vw, 76px);
+      }
+
+      .eyebrow,
+      .section-label {
+        margin: 0 0 12px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        color: var(--black);
+      }
+
+      h1,
+      h2 {
+        font-family: var(--serif);
+        font-weight: 600;
+        letter-spacing: -0.045em;
+        line-height: 1;
+      }
+
+      h1 {
+        max-width: 800px;
+        font-size: clamp(3rem, 8vw, 6.6rem);
+      }
+
+      h2 {
+        font-size: clamp(2rem, 4vw, 3.1rem);
+      }
+
+      h3 {
+        font-family: var(--sans);
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .intro {
+        max-width: 650px;
+        margin: 22px 0 0;
+        font-size: clamp(1rem, 1.7vw, 1.16rem);
+      }
+
+      .status-overview {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 46px 0 0;
+        border-top: 2px solid var(--black);
+        border-left: 2px solid var(--black);
+      }
+
+      .status-card {
+        min-height: 150px;
+        padding: 18px;
+        border-right: 2px solid var(--black);
+        border-bottom: 2px solid var(--black);
+      }
+
+      .status-card__value {
+        display: block;
+        margin: 18px 0 4px;
+        font-family: var(--serif);
+        font-size: clamp(2.8rem, 5vw, 4.5rem);
+        font-weight: 600;
+        letter-spacing: -0.06em;
+        line-height: 0.85;
+      }
+
+      .status-card__copy {
+        margin: 0;
+        font-size: 0.8rem;
+      }
+
+      .highlight {
+        display: inline-block;
+        padding: 3px 8px 4px;
+        color: var(--white);
+        background: var(--accent);
+      }
+
+      .section {
+        margin-top: 70px;
+        padding-top: 20px;
+        border-top: 2px solid var(--black);
+      }
+
+      .section-heading {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 28px;
+      }
+
+      .section-note {
+        max-width: 300px;
+        margin: 0;
+        font-size: 0.78rem;
+        text-align: right;
+      }
+
+      .task-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border-top: 1px solid var(--black);
+      }
+
+      .task {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        gap: 16px;
+        align-items: start;
+        padding: 18px 0;
+        border-bottom: 1px solid var(--black);
+      }
+
+      .task-marker {
+        display: grid;
+        place-items: center;
+        width: 20px;
+        height: 20px;
+        margin-top: 2px;
+        border: 2px solid var(--black);
+        font-size: 0.75rem;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .task--done .task-marker {
+        color: var(--white);
+        background: var(--black);
+      }
+
+      .task-title,
+      .task-copy {
+        margin: 0;
+      }
+
+      .task-title {
+        font-size: 0.98rem;
+        font-weight: 700;
+      }
+
+      .task-copy {
+        margin-top: 4px;
+        font-size: 0.86rem;
+      }
+
+      .task-status {
+        padding: 4px 7px;
+        border: 1px solid var(--black);
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        line-height: 1.2;
+        text-align: center;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .task-status--client {
+        color: var(--white);
+        border-color: #6209e5;
+        background: var(--accent);
+      }
+
+      .archive {
+        margin-top: 40px;
+        border-top: 1px solid var(--black);
+        border-bottom: 1px solid var(--black);
+      }
+
+      .archive summary {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 15px 0;
+        cursor: pointer;
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        list-style: none;
+        text-transform: uppercase;
+      }
+
+      .archive summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .archive summary::after {
+        content: "+";
+        font-size: 1.2rem;
+      }
+
+      .archive[open] summary::after {
+        content: "−";
+      }
+
+      .archive__content {
+        padding: 4px 0 22px;
+      }
+
+      .archive__content p {
+        max-width: 700px;
+        margin: 0;
+        font-size: 0.9rem;
+      }
+
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        margin-top: 70px;
+        padding-top: 18px;
+        border-top: 2px solid var(--black);
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 700px) {
+        .page {
+          width: min(100% - 28px, 1040px);
+          padding-top: 20px;
+        }
+
+        .header,
+        .section-heading,
+        .footer {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .meta,
+        .section-note {
+          text-align: left;
+        }
+
+        .status-overview {
+          grid-template-columns: 1fr;
+        }
+
+        .section {
+          margin-top: 52px;
+        }
+
+        .task {
+          grid-template-columns: auto minmax(0, 1fr);
+        }
+
+        .task-status {
+          grid-column: 2;
+          justify-self: start;
+          margin-top: -8px;
+        }
+      }
+
+      @media print {
+        .page {
+          width: auto;
+          padding: 0;
+        }
+
+        .section {
+          break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <p class="brand">Skin by Karla</p>
+        <p class="meta">Project work status<br>Prepared by AJRA</p>
+      </header>
+
+      <main>
+        <p class="eyebrow">Website development</p>
+        <h1>Current work,<br><span class="highlight">clearly tracked.</span></h1>
+        <p class="intro">
+          A shared view of what has been completed and what is still pending to
+          keep Skin by Karla moving forward.
+        </p>
+
+        <section class="status-overview" aria-label="Project overview">
+          <article class="status-card">
+            <p class="section-label">Completed</p>
+            <strong class="status-card__value">07</strong>
+            <p class="status-card__copy">Core items ready for review.</p>
+          </article>
+          <article class="status-card">
+            <p class="section-label">Pending</p>
+            <strong class="status-card__value">05</strong>
+            <p class="status-card__copy">Tasks still to complete.</p>
+          </article>
+          <article class="status-card">
+            <p class="section-label">Pending from Karla</p>
+            <strong class="status-card__value">02</strong>
+            <p class="status-card__copy">Work paused until an item is received.</p>
+          </article>
+        </section>
+
+        <section class="section" aria-labelledby="completed-title">
+          <div class="section-heading">
+            <div>
+              <p class="section-label">01</p>
+              <h2 id="completed-title">Completed work</h2>
+            </div>
+            <p class="section-note">Finished items ready to keep, review, or refine.</p>
+          </div>
+          <ul class="task-list">
+            <li class="task task--done">
+              <span class="task-marker" aria-label="Completed">✓</span>
+              <div>
+                <p class="task-title">Website foundation</p>
+                <p class="task-copy">Responsive static site structure and primary page sections are in place.</p>
+              </div>
+              <span class="task-status">Completed</span>
+            </li>
+            <li class="task task--done">
+              <span class="task-marker" aria-label="Completed">✓</span>
+              <div>
+                <p class="task-title">Skin by Karla visual direction</p>
+                <p class="task-copy">Typography, image treatment, and the core editorial presentation have been defined.</p>
+              </div>
+              <span class="task-status">Completed</span>
+            </li>
+            <li class="task task--done">
+              <span class="task-marker" aria-label="Completed">✓</span>
+              <div>
+                <p class="task-title">Newsletter capture foundation</p>
+                <p class="task-copy">The signup flow is prepared for connection to Google Sheets through Apps Script.</p>
+              </div>
+              <span class="task-status">Completed</span>
+            </li>
+            <li class="task task--done">
+              <span class="task-marker" aria-label="Completed">✓</span>
+              <div>
+                <p class="task-title">Booking links updated</p>
+                <p class="task-copy">Both booking calls to action now lead to the LifeSpa booking page.</p>
+              </div>
+              <span class="task-status">Completed</span>
+            </li>
+            <li class="task task--done">
+              <span class="task-marker" aria-label="Completed">✓</span>
+              <div>
+                <p class="task-title">Temporary newsletter subscriber sheet created</p>
+                <p class="task-copy">A private Google Sheet is ready to receive Beauty Forecast signups until the Substack is available.</p>
+              </div>
+              <span class="task-status">Completed</span>
+            </li>
+            <li class="task task--done">
+              <span class="task-marker" aria-label="Completed">✓</span>
+              <div>
+                <p class="task-title">Newsletter form connected to Google Sheets</p>
+                <p class="task-copy">The Beauty Forecast signup form now sends subscriptions to the temporary Google Sheet through Apps Script.</p>
+              </div>
+              <span class="task-status">Completed</span>
+            </li>
+            <li class="task task--done">
+              <span class="task-marker" aria-label="Completed">✓</span>
+              <div>
+                <p class="task-title">Homepage quiz foundation</p>
+                <p class="task-copy">A working 10-question quiz with A/B/C scoring, result states, and a booking call to action is ready for Karla’s final content.</p>
+              </div>
+              <span class="task-status">Completed</span>
+            </li>
+          </ul>
+        </section>
+
+        <section class="section" aria-labelledby="pending-title">
+          <div class="section-heading">
+            <div>
+              <p class="section-label">02</p>
+              <h2 id="pending-title">Pending work</h2>
+            </div>
+            <p class="section-note">Tasks to schedule, complete, or review before launch.</p>
+          </div>
+          <ul class="task-list">
+            <li class="task">
+              <span class="task-marker" aria-label="Pending"></span>
+              <div>
+                <p class="task-title">Final content review</p>
+                <p class="task-copy">Review all visible copy, services, and calls to action before the launch version is approved.</p>
+              </div>
+              <span class="task-status">Pending</span>
+            </li>
+            <li class="task">
+              <span class="task-marker" aria-label="Pending"></span>
+              <div>
+                <p class="task-title">Install Google Analytics</p>
+                <p class="task-copy">Add analytics tracking to measure traffic and the actions visitors take on the website.</p>
+              </div>
+              <span class="task-status">Pending</span>
+            </li>
+            <li class="task">
+              <span class="task-marker" aria-label="Pending"></span>
+              <div>
+                <p class="task-title">Purchase the domain</p>
+                <p class="task-copy">Choose, register, and connect the final domain before the launch version is published.</p>
+              </div>
+              <span class="task-status">Pending</span>
+            </li>
+            <li class="task">
+              <span class="task-marker" aria-label="Pending"></span>
+              <div>
+                <p class="task-title">SEO and sharing details</p>
+                <p class="task-copy">Confirm final page titles, descriptions, and the image to use when the site is shared.</p>
+              </div>
+              <span class="task-status">Pending</span>
+            </li>
+            <li class="task">
+              <span class="task-marker" aria-label="Pending"></span>
+              <div>
+                <p class="task-title">Launch review</p>
+                <p class="task-copy">Complete a final desktop and mobile review before publishing the website.</p>
+              </div>
+              <span class="task-status">Pending</span>
+            </li>
+          </ul>
+        </section>
+
+        <section class="section" aria-labelledby="karla-pending-title">
+          <div class="section-heading">
+            <div>
+              <p class="section-label">03</p>
+              <h2 id="karla-pending-title">Pending from Karla</h2>
+            </div>
+            <p class="section-note">Items that need to be received before we can continue.</p>
+          </div>
+          <ul class="task-list">
+            <li class="task">
+              <span class="task-marker" aria-label="Waiting for Karla"></span>
+              <div>
+                <p class="task-title">Create the Skin by Karla Substack</p>
+                <p class="task-copy">Once the Substack is ready and its URL is shared, redirect the current newsletter form to it or replace it with the Substack signup form.</p>
+              </div>
+              <span class="task-status task-status--client">Waiting for Karla</span>
+            </li>
+            <li class="task">
+              <span class="task-marker" aria-label="Waiting for Karla"></span>
+              <div>
+                <p class="task-title">Provide final quiz content</p>
+                <p class="task-copy">Share 10 questions, three answer options for each question mapped to A/B/C, the names and descriptions of the three skin types, and the tie-break rule.</p>
+              </div>
+              <span class="task-status task-status--client">Waiting for Karla</span>
+            </li>
+          </ul>
+        </section>
+
+        <details class="archive">
+          <summary>Previous updates and completed milestones</summary>
+          <div class="archive__content">
+            <p>
+              Add older meeting notes or superseded tasks here, keeping the main
+              page focused only on current work, approvals, and active decisions.
+            </p>
+          </div>
+        </details>
+      </main>
+
+      <footer class="footer">
+        <span>Skin by Karla</span>
+        <span>Personal project tracking</span>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -70,7 +70,7 @@
       >
         <a href="#about">About</a>
         <a href="#beauty-forecast">Beauty Forecast</a>
-        <a href="#personas">Skin Personas</a>
+        <a href="#skin-quiz">Skin Quiz</a>
       </nav>
     </header>
 
@@ -101,7 +101,7 @@
             >
             <a
               class="button button-ghost"
-              href="https://book.squareup.com/appointments/6hzg59l2mk1oe5/location/LENERF4RK9QQV/services"
+              href="https://mysalon.biz/lifespa/karlaesti"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -230,10 +230,14 @@
             <p class="section-kicker">Monthly notes</p>
             <h2 id="newsletter-title">Join Beauty Forecast</h2>
             <p>
-              Monthly skincare education, ingredient insights, trends, and
-              exclusive content.
+              Be the first to know when Karla’s skincare notes, guides, and
+              education launch.
             </p>
-            <form class="newsletter-form" data-newsletter-form data-endpoint="">
+            <form
+              class="newsletter-form"
+              data-newsletter-form
+              data-endpoint="https://script.google.com/macros/s/AKfycbxmXfuXjiAd_5YG6H7_9rWgk7DNp2kNjNkBtG9LeeHBE-XN_zCs5z6Lpof_6eBXzzg4WA/exec"
+            >
               <label class="sr-only" for="email">Your email address</label>
               <input
                 id="email"
@@ -253,9 +257,8 @@
               </label>
               <button class="button button-dark" type="submit">Join</button>
             </form>
-            <p class="form-note">No spam. Unsubscribe anytime.</p>
             <p class="form-success" data-newsletter-success hidden>
-              You're in. Welcome to Beauty Forecast.
+              You’re on the list. We’ll be in touch soon.
             </p>
             <p class="form-error" data-newsletter-error hidden>
               Something went wrong. Please try again.
@@ -274,21 +277,21 @@
             <h2 id="treatments-title">Ready for hands-on guidance?</h2>
             <p>
               Looking for personalized support?<br>
-              Explore treatments at Ani Beauty Studio.
+              Explore personalized treatments with Karla.
             </p>
             <a
               class="button button-dark"
-              href="https://book.squareup.com/appointments/6hzg59l2mk1oe5/location/LENERF4RK9QQV/services"
+              href="https://mysalon.biz/lifespa/karlaesti"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Book at Ani Beauty Studio
+              Book a Treatment
             </a>
           </div>
           <div class="treatment-image">
             <img
               src="assets/images/treatment-room.jpg"
-              alt="Interior view of Ani Beauty Studio"
+              alt="Interior view of Karla's treatment studio"
               width="1600"
               height="2399"
               loading="lazy"
@@ -298,30 +301,48 @@
       </section>
 
       <section
-        class="section vision-section"
-        id="personas"
-        aria-labelledby="vision-title"
+        class="section quiz-section"
+        id="skin-quiz"
+        aria-labelledby="quiz-title"
+        data-skin-quiz
       >
-        <div class="section-inner centered">
-          <p class="section-kicker">Next</p>
-          <h2 id="vision-title">What's coming</h2>
-          <div class="vision-grid">
-            <article class="vision-card">
-              <h3>Skin Persona Quiz</h3>
-              <p>Coming Soon</p>
-            </article>
-            <article class="vision-card">
-              <h3>Glow Guide</h3>
-              <p>Coming Soon</p>
-            </article>
-            <article class="vision-card">
-              <h3>Education Library</h3>
-              <p>Coming Soon</p>
-            </article>
-            <article class="vision-card">
-              <h3>Monthly Forecast</h3>
-              <p>Coming Soon</p>
-            </article>
+        <div class="section-inner quiz-shell">
+          <div class="quiz-intro" data-quiz-intro>
+            <p class="section-kicker">Skin Quiz</p>
+            <h2 id="quiz-title">Discover your skin type.</h2>
+            <p>
+              Answer 10 quick questions to receive a personalized skin-type
+              result and a treatment recommendation from Karla.
+            </p>
+            <button class="button button-dark" type="button" data-quiz-start>
+              Start the Quiz
+            </button>
+          </div>
+
+          <div class="quiz-panel" data-quiz-questions hidden>
+            <div class="quiz-progress">
+              <p data-quiz-progress>Question 1 of 10</p>
+              <progress value="1" max="10" data-quiz-progress-bar></progress>
+            </div>
+            <h3 data-quiz-question></h3>
+            <div class="quiz-choices" data-quiz-choices></div>
+          </div>
+
+          <div class="quiz-result" data-quiz-result hidden aria-live="polite">
+            <p class="section-kicker">Your result</p>
+            <h2 data-quiz-result-title></h2>
+            <p data-quiz-result-copy></p>
+            <a
+              class="button button-dark"
+              href="https://mysalon.biz/lifespa/karlaesti"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book a Treatment for your skin type
+            </a>
+            <button class="quiz-restart" type="button" data-quiz-restart>
+              Take the quiz again
+            </button>
           </div>
         </div>
       </section>
